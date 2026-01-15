@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Mia Home Page</title>
+    <title>Home Page Personalizzata</title>
     <style>
-        /* --- STILI GENERALI --- */
         body { 
             background-color: #f0f2f5; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -16,126 +15,163 @@
             align-items: center;    
         }
 
-        /* --- STILI BARRA DI RICERCA --- */
+        /* --- RICERCA --- */
         .search-section {
             width: 100%;
             max-width: 600px;
-            margin-bottom: 50px; 
+            margin-bottom: 40px; 
             text-align: center;
         }
-
-        .brand {
-            font-size: 32px;
-            color: #4285f4;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
         .search-wrapper {
             background: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            display: flex;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .search-wrapper:hover {
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-        }
-
-        .search-form {
-            display: flex;
-            width: 100%;
-            align-items: center;
-        }
-
-        .search-input {
-            border: none;
-            outline: none;
-            flex-grow: 1;
-            padding: 10px;
-            font-size: 16px;
-        }
-
-        .search-button {
-            background-color: #4285f4;
-            color: white;
-            border: none;
             padding: 8px 20px;
             border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
         }
+        .search-form { display: flex; width: 100%; align-items: center; }
+        .search-input { border: none; outline: none; flex-grow: 1; padding: 10px; font-size: 16px; }
+        .search-button { background-color: #4285f4; color: white; border: none; padding: 8px 20px; border-radius: 50px; cursor: pointer; font-weight: bold; }
 
-        .search-button:hover {
-            background-color: #357ae8;
-        }
-
-        /* --- STILI GRIGLIA --- */
+        /* --- GRIGLIA --- */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(6, 120px); 
+            grid-template-columns: repeat(6, 110px); /* Base di 6 colonne */
             grid-gap: 15px;
             justify-content: center;
         }
 
         .tile {
             background: white;
-            border: 2px solid #3b82f6;
+            border: 1px solid #e0e0e0;
             border-radius: 12px;
-            height: 100px;
+            height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.2s;
+            overflow: hidden;
+            padding: 5px;
         }
 
         .tile:hover { 
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-color: #3b82f6;
+        }
+
+        /* Mattonelle larghe (Riga 1) */
+        .tile-wide {
+            grid-column: span 2; /* Occupa 2 spazi colonna */
         }
 
         .tile img { 
-            max-width: 60%; 
-            max-height: 60%; 
+            max-width: 85%; 
+            max-height: 70%; 
+            object-fit: contain;
         }
 
-        /* Responsive: per schermi piccoli */
-        @media (max-width: 800px) {
-            .grid-container {
-                grid-template-columns: repeat(3, 120px);
-            }
+        /* Testo per mattonelle senza logo */
+        .tile-text {
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            font-size: 14px;
         }
+        .secondacolonna {
+        margin-top: 20px;}
+        
+        .colonnasiti {
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        }
+        .prima  {
+        background-color: rgb(46, 121, 219);
+        }
+      .seconda  {
+        background-color: rgb(224, 42, 38);
+        }
+        
     </style>
 </head>
 <body>
 
     <div class="search-section">
-        <div class="brand">Google</div>
         <div class="search-wrapper">
             <form action="https://www.google.com/search" method="GET" class="search-form">
-                <input type="text" name="q" class="search-input" placeholder="Cerca nel web..." required>
+                <input type="text" name="q" class="search-input" placeholder="Cerca su Google...">
                 <button type="submit" class="search-button">Cerca</button>
             </form>
         </div>
     </div>
 
-    <div class="grid-container">
-        <a href="https://mail.google.com" class="tile">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail">
+    <div class="grid-container prima colonnasiti">
+        
+       <a href="https://secure.bpointsaas.it/" class="tile tile-wide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
         </a>
-        <a href="https://www.amazon.it" class="tile">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
+         <a href="https://secure.bpointsaas.it/" class="tile tile-wide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
         </a>
-        <a href="https://www.youtube.com" class="tile">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
+         <a href="https://secure.bpointsaas.it/" class="tile tile-wide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
         </a>
-        <a href="#" class="tile"><span style="font-size: 30px; color: #ccc;">+</span></a>
-        <a href="#" class="tile"><span style="font-size: 30px; color: #ccc;">+</span></a>
-        <a href="#" class="tile"><span style="font-size: 30px; color: #ccc;">+</span></a>
+        
+
+         <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+         <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+        <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+         <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+         <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+         <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+
+    </div>
+    
+     <div class="grid-container seconda colonnasiti">
+        
+         <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+         <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+        <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+
+         <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+        <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+         <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+         <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+         <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+        <a href="https://secure.bpointsaas.it/" class="tile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+
     </div>
 
 </body>
