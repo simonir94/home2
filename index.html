@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { background-color: #f0f2f5; font-family: sans-serif; display: flex; justify-content: center; padding: 20px; }
+  /* Crea la griglia */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 120px); /* 6 colonne */
+    grid-gap: 15px;
+  }
+  /* Stile delle mattonelle */
+  .tile {
+    background: white;
+    border: 2px solid #3b82f6; /* Bordino blu come in foto */
+    border-radius: 8px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  .tile:hover { transform: scale(1.05); }
+  .tile img { max-width: 80%; max-height: 80%; }
+  
+  /* Widget Grande (News o Ricerca) */
+  .large-widget {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: white;
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+  <a href="https://mail.google.com" class="tile"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg"></a>
+  <a href="https://www.amazon.it" class="tile"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"></a>
+  <a href="https://www.amazon.it" class="tile"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"></a>
+  <div class="large-widget">
+    <strong>Ultime Notizie</strong>
+    <p style="font-size: 12px;">Caricamento feed...</p>
+  </div>
+
+  </div>
+
+</body>
+</html>
