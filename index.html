@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page Personalizzata</title>
+    <title>Home Page Personalizzata - Fisco</title>
     <style>
         /* --- RESET E BASI --- */
         body { 
@@ -34,16 +34,16 @@
         .search-input { border: none; outline: none; flex-grow: 1; padding: 10px; font-size: 16px; }
         .search-button { background-color: #4285f4; color: white; border: none; padding: 8px 20px; border-radius: 50px; cursor: pointer; font-weight: bold; }
 
-        /* --- CONTENITORI (SOLUZIONE ANTI-SPAZIO VUOTO) --- */
+        /* --- CONTENITORI --- */
         .colonnasiti {
             width: 100%;
             max-width: 800px;
             padding: 20px;
             border-radius: 15px;
             margin-bottom: 20px;
-            display: flex;       /* Usiamo Flexbox invece di Grid */
-            flex-wrap: wrap;     /* Permette di andare a capo */
-            gap: 15px;           /* Spazio tra le mattonelle */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
             justify-content: center;
         }
 
@@ -60,17 +60,13 @@
             transition: all 0.2s;
             padding: 10px;
             box-sizing: border-box;
-            
-            /* Spiegazione: flex-grow (1) permette alle mattonelle di allargarsi 
-               per occupare tutto lo spazio della riga, eliminando i buchi. */
             flex: 1 1 120px; 
             min-width: 110px;
-            max-width: 250px; /* Evita che una singola mattonella diventi troppo larga */
+            max-width: 250px;
         }
 
-        /* Mattonelle larghe (Riga 1) */
         .tile-wide {
-            flex: 2 1 240px; /* Occupa il doppio dello spazio base */
+            flex: 2 1 240px;
             min-width: 220px;
         }
 
@@ -91,13 +87,48 @@
         .seconda { background-color: rgb(224, 42, 38); }
         .terza { background-color: rgb(153, 204, 96); }
 
-        /* Supporto per testo (se necessario) */
-        .tile-text {
-            font-weight: bold;
-            color: #333;
-            text-align: center;
-            font-size: 14px;
+        /* --- SEZIONE NEWS --- */
+        .news-container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-top: 10px;
         }
+        .news-title-header {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .news-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            border-left: 4px solid #4285f4;
+            transition: background 0.2s;
+        }
+        .news-item:hover {
+            background: #eef4ff;
+        }
+        .news-text { font-size: 14px; font-weight: 500; flex-grow: 1; padding-right: 15px; }
+        .news-source { font-size: 10px; text-transform: uppercase; color: #4285f4; font-weight: bold; margin-bottom: 2px; display: block; }
+        .news-date { font-size: 11px; color: #888; white-space: nowrap; }
 
         /* Responsive Mobile */
         @media (max-width: 600px) {
@@ -111,80 +142,157 @@
     <div class="search-section">
         <div class="search-wrapper">
             <form action="https://www.google.com/search" method="GET" class="search-form">
-                <input type="text" name="q" class="search-input" placeholder="Cerca su Google...">
+                <input type="text" name="q" class="search-input" placeholder="Cerca su Google..." autofocus>
                 <button type="submit" class="search-button">Cerca</button>
             </form>
         </div>
     </div>
 
     <div class="colonnasiti prima">
-        <a href="https://secure.bpointsaas.it/" class="tile tile-wide">
+        <a href="https://secure.bpointsaas.it/" target="_blank" class="tile tile-wide">
             <img src="https://secure.bpointsaas.it/x_resources/img/Logo_bpoint%20saas_200.png">
         </a>
-        <a href="https://web.whatsapp.com/" class="tile tile-wide">
+        <a href="https://web.whatsapp.com/" target="_blank" class="tile tile-wide">
             <img src="https://marketplace.canva.com/xu1qU/MAGzNmxu1qU/1/tl/canva-whatsapp-logo-MAGzNmxu1qU.png">
         </a>
-        <a href="https://iampe.agenziaentrate.gov.it/sam/UI/Login?realm=/agenziaentrate" class="tile tile-wide">
+        <a href="https://iampe.agenziaentrate.gov.it/sam/UI/Login?realm=/agenziaentrate" target="_blank" class="tile tile-wide">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Logo_Agenzia_Entrate.png/1200px-Logo_Agenzia_Entrate.png">
         </a>
-        <a href="https://www.agenziaentrateriscossione.gov.it/it/#" class="tile">
+        <a href="https://www.agenziaentrateriscossione.gov.it/it/#" target="_blank" class="tile">
             <img src="https://www.assiv.it/wp-content/uploads/2020/11/unnamed-1.jpg">
         </a>
-        <a href="https://www.webdesk.it/" class="tile">
+        <a href="https://www.webdesk.it/" target="_blank" class="tile">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-MTpPb7qha60sKxc9VIStM5JpLx5J7Uo5Cg&s">
         </a>
-        <a href="https://codicefiscale.it/inverso/" class="tile">
+        <a href="https://codicefiscale.it/inverso/" target="_blank" class="tile">
             <img src="https://codicefiscale.it/favicon/apple-touch-icon.png">
         </a>
-        <a href="https://www.pec.it/webmail-pec.aspx" class="tile">
+        <a href="https://www.pec.it/webmail-pec.aspx" target="_blank" class="tile">
             <img src="https://grosseto.ordingegneri.it/wp-content/uploads/sites/87/2024/05/ios-aruba-pec.png">
         </a>
-        <a href="https://www.rentri.gov.it/it" class="tile">
+        <a href="https://www.rentri.gov.it/it" target="_blank" class="tile">
             <img src="https://www.confartigianatolecce.it/wp-content/uploads/2025/01/logo_rentri_0.jpg">
         </a>
     </div>
 
     <div class="colonnasiti seconda">
-        <a href="https://mail.google.com/mail/u/0/#inbox" class="tile">
+        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" class="tile">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1280px-Gmail_icon_%282020%29.svg.png">
         </a>
-        <a href="https://gemini.google.com/app" class="tile">
+        <a href="https://gemini.google.com/app" target="_blank" class="tile">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/960px-Google_Gemini_icon_2025.svg.png">
         </a>
-        <a href="https://drive.google.com/drive/u/0/my-drive" class="tile">
+        <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank" class="tile">
             <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png">
         </a>
-        <a href="https://www.google.com/maps?authuser=0" class="tile">
+        <a href="https://www.google.com/maps?authuser=0" target="_blank" class="tile">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/1428px-Google_Maps_icon_%282020%29.svg.png">
         </a>
-        <a href="https://docs.google.com/spreadsheets/u/0/" class="tile">
+        <a href="https://docs.google.com/spreadsheets/u/0/" target="_blank" class="tile">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Google_Sheets_2020_Logo.svg/500px-Google_Sheets_2020_Logo.svg.png">
         </a>
-        <a href="https://docs.google.com/document/u/0/" class="tile">
+        <a href="https://docs.google.com/document/u/0/" target="_blank" class="tile">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google_Docs_logo_%282014-2020%29.svg/1481px-Google_Docs_logo_%282014-2020%29.svg.png">
         </a>
     </div>
 
     <div class="colonnasiti terza">
-        <a href="https://www.skyscanner.it/" class="tile">
+        <a href="https://www.skyscanner.it/" target="_blank" class="tile">
             <img src="https://cdn.startupitalia.eu/wp-content/uploads/sites/10/2019/09/Skyscanner_stacked-logo_Sky-blue_RGB_72dpi-1.jpg">
         </a>
-        <a href="https://www.booking.com/index.it.html" class="tile">
+        <a href="https://www.booking.com/index.it.html" target="_blank" class="tile">
             <img src="https://i.pinimg.com/736x/d3/73/20/d373209488d7614254cf9ca69c705a6a.jpg">
         </a>
-        <a href="https://www.airbnb.it/" class="tile">
+        <a href="https://www.airbnb.it/" target="_blank" class="tile">
             <img src="https://loghi-famosi.com/wp-content/uploads/2020/07/Airbnb-Logo.png">
         </a>
-        <a href="https://www.ryanair.com/it/it/" class="tile">
+        <a href="https://www.ryanair.com/it/it/" target="_blank" class="tile">
             <img src="https://upload.wikimedia.org/wikipedia/it/thumb/c/ce/Ryanair_Logo.svg/1024px-Ryanair_Logo.svg.png">
         </a>
-        <a href="https://www.trenitalia.com/it.html" class="tile">
+        <a href="https://www.trenitalia.com/it.html" target="_blank" class="tile">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Trenitalia_logo.svg/1280px-Trenitalia_logo.svg.png">
         </a>
-        <a href="https://www.italotreno.com/it" class="tile">
+        <a href="https://www.italotreno.com/it" target="_blank" class="tile">
             <img src="https://cdn.aptoide.com/imgs/1/6/4/16457a1f1c63ba10242db10da373fab3_icon.png">
         </a>
     </div>
+
+    <div class="news-container">
+        <h3 class="news-title-header">⚖️ Aggiornamenti Norme & Fisco</h3>
+        <div id="news-feed" class="news-list">
+            <p style="text-align:center; color:#888;">Caricamento flussi fiscali...</p>
+        </div>
+    </div>
+
+    <script>
+        const RSS_SOURCES = [
+            { name: "Il Sole 24 Ore", url: "https://www.ilsole24ore.com/rss/norme-e-tributi.xml" },
+            { name: "FiscoOggi", url: "https://www.fiscooggi.it/rss/notizie" },
+            { name: "Info Fiscale", url: "https://www.informazionefiscale.it/spip.php?page=backend" },
+            { name: "Ipsoa", url: "https://www.ipsoa.it/RSS-Feeds/Fisco.aspx" }
+        ];
+
+        async function fetchNews() {
+            const container = document.getElementById('news-feed');
+            let allItems = [];
+
+            try {
+                // Carichiamo tutte le fonti in parallelo
+                const fetchPromises = RSS_SOURCES.map(source => 
+                    fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(source.url)}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.status === 'ok') {
+                            // Aggiungiamo il nome della fonte a ogni articolo
+                            return data.items.map(item => ({ ...item, sourceName: source.name }));
+                        }
+                        return [];
+                    })
+                    .catch(() => []) // Se un feed fallisce, restituiamo un array vuoto
+                );
+
+                const results = await Promise.all(fetchPromises);
+                allItems = results.flat(); // Uniamo tutti gli articoli in un unico array
+
+                // Ordiniamo per data di pubblicazione (più recenti in alto)
+                allItems.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+
+                if (allItems.length > 0) {
+                    container.innerHTML = ''; // Svuota il caricamento
+                    
+                    // Mostriamo le prime 10 notizie totali
+                    allItems.slice(0, 10).forEach(item => {
+                        const pubDate = new Date(item.pubDate);
+                        const timeString = pubDate.toLocaleDateString('it-IT', { day: '2-digit', month: '2-digit' }) + " " + 
+                                         pubDate.getHours() + ":" + String(pubDate.getMinutes()).padStart(2, '0');
+                        
+                        const link = document.createElement('a');
+                        link.href = item.link;
+                        link.target = "_blank";
+                        link.className = "news-item";
+                        link.innerHTML = `
+                            <div style="display: flex; flex-direction: column; flex-grow: 1;">
+                                <span class="news-source">${item.sourceName}</span>
+                                <span class="news-text">${item.title}</span>
+                            </div>
+                            <span class="news-date">${timeString}</span>
+                        `;
+                        container.appendChild(link);
+                    });
+                } else {
+                    container.innerHTML = "Nessuna notizia disponibile al momento.";
+                }
+            } catch (error) {
+                console.error("Errore news:", error);
+                container.innerHTML = "Impossibile caricare le news.";
+            }
+        }
+
+        // Carica news all'avvio
+        fetchNews();
+        // Aggiorna ogni 15 minuti
+        setInterval(fetchNews, 900000);
+    </script>
 
 </body>
 </html>
